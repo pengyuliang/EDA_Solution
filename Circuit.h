@@ -10,16 +10,35 @@ using namespace std;
 VPI接口无法解析出逻辑门的邻接门，需要根据逻辑门的输入输出自行建立节点的连接情况
 */
 
+//邻接表结点
+struct GNode
+{
+	LogicGate Gate;
+	GNode* next;
+};
 
 
 class Circuit
 {
 	vector<LogicGate> Gates;//逻辑门集合，即图中节点集合
+							//逻辑门以在数组中的编号作为唯一标识
+
+	vector<vector<int>> adj;//邻接表
+
 
 public:
 	
 	//addEdge待补充
 	void addEdge(int start, vector<int> end){};
+
+	//读入逻辑门时，构建输出信号和输入信号的映射
+	//
+	Circuit(const vector<LogicGate>& Nodes, const unordered_map<string, int>& outputToGate, const unordered_map<string, vector<int>>& inputToGate)
+	{
+		Gates = Nodes;
+
+
+	}
 
 	Circuit(const vector<LogicGate>& Nodes)
 	{
