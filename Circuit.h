@@ -30,8 +30,8 @@ public:
 	//addEdge待补充
 	void addEdge(int start, vector<int> end){};
 
-	//读入逻辑门时，构建输出信号和输入信号的映射
-	//
+	
+	//根据逻辑门表，输入输出表
 	Circuit(const unordered_map<string, LogicGate>& Nodes, const unordered_map<string, string>& outputToGate, const unordered_map<string, vector<string>>& inputToGate)
 	{
 		Gates = Nodes;
