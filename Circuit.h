@@ -21,8 +21,9 @@ struct GNode
 class Circuit
 {
 	unordered_map<string, LogicGate> Gates;//逻辑门集合，即图中节点集合		
+	//逻辑门名称作为识别逻辑门的唯一标识
 
-	vector<vector<int>> adj;//邻接表
+	unordered_map<string, vector<LogicGate>>adj;
 
 
 public:
@@ -31,10 +32,12 @@ public:
 	void addEdge(int start, vector<int> end){};
 
 	
-	//根据逻辑门表，输入输出表
+	//根据逻辑门表，输入输出表建立有向图
 	Circuit(const unordered_map<string, LogicGate>& Nodes, const unordered_map<string, string>& outputToGate, const unordered_map<string, vector<string>>& inputToGate)
 	{
+		//接收有向图节点
 		Gates = Nodes;
+
 
 
 	}
