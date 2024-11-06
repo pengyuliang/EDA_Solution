@@ -100,6 +100,7 @@ int main() {
     circuit.detectCircles();
        
     cout << gates.size() << endl;
+
     return 0;
 
 }
